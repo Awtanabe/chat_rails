@@ -1,0 +1,21 @@
+<h1>Chats#show</h1>
+<p>Find me in app/views/chats/show.html.erb</p>
+
+
+<h3>メッセージ一覧</h3>
+ <div class="messages">
+   <% @messages.each do |message|%>
+     <%= "#{message.user.name}: #{message.body}"%>
+     <br>
+   <%end%>
+ </div>
+
+<h3>メッセージフォーム</h3>
+
+<%= form_for [@chat, Message.new] do |f|%>
+
+  <%= f.label :body%>
+  <%= f.text_area :body%>
+  <%= f.submit '送信'%>
+<%end%>
+

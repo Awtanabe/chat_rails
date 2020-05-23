@@ -1,4 +1,13 @@
-<h1>Users#show</h1>
+<h1>User<%= @user.id%></h1>
 <p>Find me in app/views/users/show.html.erb</p>
 
 <%= @user.name%>
+
+<%= link_to "チャットする", chats_path(user_id: @user.id), method: :post%>
+
+<h3>chat 一覧</h3>
+<br>
+<% @chats.each do |chat|%>
+  <%= link_to "#{chat.users.where.not(id: @user.id).first&.name}", chat_path(chat)%>
+  <br>
+<%end%>
