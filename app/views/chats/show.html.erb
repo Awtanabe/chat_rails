@@ -6,6 +6,9 @@
  <div class="messages">
    <% @messages.each do |message|%>
      <%= "#{message.user.name}: #{message.body}"%>
+     <%if message.image.present?%>
+       <%= image_tag message.image&.url%>
+     <%end%>
      <br>
    <%end%>
  </div>
@@ -16,6 +19,7 @@
 
   <%= f.label :body%>
   <%= f.text_area :body%>
+  <%= f.file_field :image%>
   <%= f.submit '送信'%>
 <%end%>
 

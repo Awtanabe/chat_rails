@@ -13,6 +13,6 @@ class MessagesController < ApplicationController
   end
 
   def message_params
-    params.require(:message).permit(:body).merge(chat_id: params[:chat_id],user_id: current_user.id)
+    params.require(:message).permit(:body, :image).merge(chat_id: params[:chat_id],user_id: current_user.id)
   end
 end
