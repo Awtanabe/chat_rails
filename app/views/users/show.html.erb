@@ -8,6 +8,6 @@
 <h3>chat 一覧</h3>
 <br>
 <% @chats.each do |chat|%>
-  <%= link_to "#{chat.users.where.not(id: @user.id).first&.name}", chat_path(chat)%>
+  <%= link_to "#{chat.chat_user_name(@user)}", chat_path(chat)%>
   <br>
 <%end%>
