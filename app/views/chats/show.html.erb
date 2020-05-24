@@ -20,6 +20,9 @@
   <%= f.label :body%>
   <%= f.text_area :body%>
   <%= f.file_field :image%>
+
+  <%= f.label :日付 %>
+  <%= f.text_field :limit_date, :class => 'datepicker' %>
   <%= f.submit '送信'%>
 <%end%>
 

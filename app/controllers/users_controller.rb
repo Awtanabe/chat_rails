@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    flash[:index] ="top pageだよ"
   end
 
   def show
